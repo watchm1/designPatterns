@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mali6\\OneDrive\\Masaüstü\\BootCamp\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
+      "projectUniqueName": "C:\\Users\\mali6\\OneDrive\\Masaüstü\\BootCamp\\designPatterns\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
       "projectName": "DesignPatterns",
-      "projectPath": "C:\\Users\\mali6\\OneDrive\\Masaüstü\\BootCamp\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
+      "projectPath": "C:\\Users\\mali6\\OneDrive\\Masaüstü\\BootCamp\\designPatterns\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
       "packagesPath": "C:\\Users\\mali6\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mali6\\OneDrive\\Masaüstü\\BootCamp\\DesignPatterns\\DesignPatterns\\obj\\",
+      "outputPath": "C:\\Users\\mali6\\OneDrive\\Masaüstü\\BootCamp\\designPatterns\\DesignPatterns\\DesignPatterns\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
