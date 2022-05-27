@@ -2,6 +2,8 @@
 using DesignPatterns.IteratorPattern;
 using DesignPatterns.Composite;
 using DesignPatterns.CommandPattern;
+using DesignPatterns.FactoryMethodPattern;
+using DesignPatterns.AbstractFactoryPattern;
 namespace DesignPatterns
 {
     class Program
@@ -45,22 +47,55 @@ namespace DesignPatterns
             //b12.operation();
             ////////////// COMMAND /////////////
 
-            Menu m = new Menu();
-            LamaAcKapa komut_lamba = new LamaAcKapa(new Lamba());
-            Televizyon tv = new Televizyon();
-            OncekiKanal komut_once = new OncekiKanal(tv);
-            SonrakiKanal komut_sonra = new SonrakiKanal(tv);
+            //Menu m = new Menu();
+            //LamaAcKapa komut_lamba = new LamaAcKapa(new Lamba());
+            //Televizyon tv = new Televizyon();
+            //OncekiKanal komut_once = new OncekiKanal(tv);
+            //SonrakiKanal komut_sonra = new SonrakiKanal(tv);
 
-            m.AddCommand(komut_lamba);
-            m.AddCommand(komut_once);
-            m.AddCommand(komut_sonra);
-
-
-            m.MenuSystem();
+            //m.AddCommand(komut_lamba);
+            //m.AddCommand(komut_once);
+            //m.AddCommand(komut_sonra);
 
 
+            //m.MenuSystem();
+            /////////////////// FACTORY METHOD /////////////////
 
 
+
+            //ProduceACar(new BMWFactory());
+            //ProduceACar(new MercedesFactory());
+
+            ///////////////ABSTRACT FACTORY //////////////
+            ///
+            VirtualGame normalGame = createGame(new NormalGameFactory());
+            normalGame.RunGame();
+
+            VirtualGame magicGame = createGame(new MagicGameFactory());
+            magicGame.RunGame();
+        }
+
+        public static VirtualGame createGame(GameFactory f)
+        {
+            VirtualGame game = f.NewGame();
+            VirtualRoom room1 = f.CreateRoom();
+            VirtualRoom room2 = f.CreateRoom();
+            VirtualDoor door1 = f.CreateDoor();
+            VirtualDoor door2 = f.CreateDoor();
+
+            room1.AddDoor(door2);
+            room2.AddDoor(door1);
+
+            game.AddRoom(room1);
+            game.AddRoom(room2);
+
+            return game;
+        }
+        static public void ProduceACar(CarFactory f)
+        {
+            Car a = f.ProduceCar();
+            Console.WriteLine(a.modal());
+            Console.WriteLine(a.getMaxSpeed());
         }
 
     }
