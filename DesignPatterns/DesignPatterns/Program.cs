@@ -4,6 +4,7 @@ using DesignPatterns.Composite;
 using DesignPatterns.CommandPattern;
 using DesignPatterns.FactoryMethodPattern;
 using DesignPatterns.AbstractFactoryPattern;
+using DesignPatterns.SingletonPattern;
 namespace DesignPatterns
 {
     class Program
@@ -68,11 +69,17 @@ namespace DesignPatterns
 
             ///////////////ABSTRACT FACTORY //////////////
             ///
-            VirtualGame normalGame = createGame(new NormalGameFactory());
-            normalGame.RunGame();
+            //VirtualGame normalGame = createGame(new NormalGameFactory());
+            //normalGame.RunGame();
 
-            VirtualGame magicGame = createGame(new MagicGameFactory());
-            magicGame.RunGame();
+            //VirtualGame magicGame = createGame(new MagicGameFactory());
+            //magicGame.RunGame();
+
+            SingleClass t = SingleClass.Instance();
+            Console.WriteLine(t.GetValue());
+            t.SetValue(19);
+            Console.WriteLine(t.GetValue());
+            
         }
 
         public static VirtualGame createGame(GameFactory f)

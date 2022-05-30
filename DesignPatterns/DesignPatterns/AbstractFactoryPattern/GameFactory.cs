@@ -11,5 +11,6 @@ namespace DesignPatterns.AbstractFactoryPattern
         public abstract VirtualGame NewGame();
         public abstract VirtualDoor CreateDoor();
         public abstract VirtualRoom CreateRoom();
+    
     }
 }
