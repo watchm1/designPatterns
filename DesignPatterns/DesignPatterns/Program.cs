@@ -6,6 +6,7 @@ using DesignPatterns.FactoryMethodPattern;
 using DesignPatterns.AbstractFactoryPattern;
 using DesignPatterns.SingletonPattern;
 using DesignPatterns.AdapterPattern;
+using DesignPatterns.ObserverPattern;
 namespace DesignPatterns
 {
     class Program
@@ -83,11 +84,28 @@ namespace DesignPatterns
             //Console.WriteLine(t.GetValue());
             ///////////
             ////////////////ADAPTER
-            Player p = new Player();
-            p.AddToList(new Music("Metallica - one "));
-            p.AddToList(new Music("Iron - m"));
-            p.AddToList(new OGGAdapter("Bon jovi- these days"));
-            p.Play();
+            //Player p = new Player();
+            //p.AddToList(new Music("Metallica - one "));
+            //p.AddToList(new Music("Iron - m"));
+            //p.AddToList(new OGGAdapter("Bon jovi- these days"));
+            //p.Play();
+            /////////////////// OBSERVER//////////////
+            ///
+
+
+            Data data = new Data();
+            Graph pastaGraph = new Graph(data);
+            OtherGraph cubukGraph = new OtherGraph(data);
+            
+            data.Attach(pastaGraph);
+            data.Attach(cubukGraph);
+            
+            
+            data.NewData();
+            data.NewData();
+            
+            data.Detach(cubukGraph);
+            data.NewData();
         }
 
         public static VirtualGame createGame(GameFactory f)
