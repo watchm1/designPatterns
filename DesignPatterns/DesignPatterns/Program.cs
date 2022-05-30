@@ -5,6 +5,7 @@ using DesignPatterns.CommandPattern;
 using DesignPatterns.FactoryMethodPattern;
 using DesignPatterns.AbstractFactoryPattern;
 using DesignPatterns.SingletonPattern;
+using DesignPatterns.AdapterPattern;
 namespace DesignPatterns
 {
     class Program
@@ -74,12 +75,19 @@ namespace DesignPatterns
 
             //VirtualGame magicGame = createGame(new MagicGameFactory());
             //magicGame.RunGame();
-
-            SingleClass t = SingleClass.Instance();
-            Console.WriteLine(t.GetValue());
-            t.SetValue(19);
-            Console.WriteLine(t.GetValue());
             
+            
+            //SingleClass t = SingleClass.Instance();
+            //Console.WriteLine(t.GetValue());
+            //t.SetValue(19);
+            //Console.WriteLine(t.GetValue());
+            ///////////
+            ////////////////ADAPTER
+            Player p = new Player();
+            p.AddToList(new Music("Metallica - one "));
+            p.AddToList(new Music("Iron - m"));
+            p.AddToList(new OGGAdapter("Bon jovi- these days"));
+            p.Play();
         }
 
         public static VirtualGame createGame(GameFactory f)
